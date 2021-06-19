@@ -8,103 +8,58 @@ class PageElemnts extends StatefulWidget {
 }
 
 class _PageElemntsState extends State<PageElemnts> {
-  // final List<String> _services = [
-  //   "Diagonistic",
-  //   "Shorts",
-  //   "Consulting",
-  //   "Ambulance",
-  //   "Nurse",
-  //   "LabWork"
-  // ];
+  final List<String> _services = [
+    "Diagonistic",
+    "Shorts",
+    "Consulting",
+    "Ambulance",
+    "Nurse",
+    "LabWork"
+  ];
+  int _selectedContainer = 0;
 
   @override
   Widget build(BuildContext context) {
-    //return Expanded(
-    //   child: GridView.count(
-    //     crossAxisCount: 3,
-    //     crossAxisSpacing: 10,
-    //     mainAxisSpacing: 10,
-    //     children: _services
-    //         .map(
-    //           (item) => Container(
-
-    //             decoration: BoxDecoration(
-    //               borderRadius: BorderRadius.circular(25),
-    //               color: Colors.white,
-    //             ),
-
-    //           ),
-    //         )
-    //         .toList(),
-    //   ),
-    // );
     return Expanded(
+      // child: GridView.builder(
+      //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      //       maxCrossAxisExtent: 100, childAspectRatio: 1.5),
+      //   itemBuilder: (context, index) {
+      //     return Container(
+      //       decoration: BoxDecoration(),
+      //       color: Colors.amber,
+      //       child: Center(child: Text(_services[index])),
+      //     );
+      //   },
+      // )
+      // ,
       child: GridView.count(
         crossAxisCount: 3,
-        children: <Widget>[
-          Card(
-            color: Colors.white,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Icon(Icons.medical_services),
+        childAspectRatio: 2,
+        crossAxisSpacing: 0,
+        controller: new ScrollController(
+          keepScrollOffset: false,
+        ),
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        children: _services.map((String value) {
+          return GestureDetector(
+            onTap: () {
+              setState(() {});
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.blue),
+              margin: EdgeInsets.all(5.0),
+              child: Center(
+                child: Text(
+                  value,
                 ),
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 45),
-                    child: Center(child: Text("Medicine")),
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-          Card(
-            color: Colors.white,
-            child: Stack(
-              children: <Widget>[Center(child: Icon(Icons.local_hospital))],
-            ),
-          ),
-          Card(
-            color: Colors.white,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Icon(Icons.room_service),
-                )
-              ],
-            ),
-          ),
-          Card(
-            color: Colors.white,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Icon(Icons.card_travel),
-                )
-              ],
-            ),
-          ),
-          Card(
-            color: Colors.white,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Icon(Icons.card_travel),
-                )
-              ],
-            ),
-          ),
-          Card(
-            color: Colors.white,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Icon(Icons.card_travel),
-                )
-              ],
-            ),
-          ),
-        ],
+          );
+        }).toList(),
       ),
     );
   }
