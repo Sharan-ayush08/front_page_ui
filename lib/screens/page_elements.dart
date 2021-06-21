@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_page_ui/screens/drugs.dart';
 
 class PageElemnts extends StatefulWidget {
   const PageElemnts({Key? key}) : super(key: key);
@@ -35,6 +36,19 @@ class _PageElemntsState extends State<PageElemnts> {
               onTap: () {
                 setState(() {
                   _selectedContainer = index;
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => ViewMedicines()),
+                  // );
+
+                  if (_services[index] == 'Medicines') {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ViewMedicines()));
+                  }
+
+                  // _services[index] == 'Medicines' ? Navigator.push(context, MaterialPageRoute(builder: (context) => ViewMedicines())):
                 });
               },
               child: Container(
