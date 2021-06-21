@@ -9,8 +9,8 @@ class PageElemnts extends StatefulWidget {
 
 class _PageElemntsState extends State<PageElemnts> {
   final List<String> _services = [
-    "Diagonistic",
-    "Shorts",
+    "Medicines",
+    "Shots",
     "Consulting",
     "Ambulance",
     "Nurse",
@@ -21,45 +21,37 @@ class _PageElemntsState extends State<PageElemnts> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      // child: GridView.builder(
-      //   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-      //       maxCrossAxisExtent: 100, childAspectRatio: 1.5),
-      //   itemBuilder: (context, index) {
-      //     return Container(
-      //       decoration: BoxDecoration(),
-      //       color: Colors.amber,
-      //       child: Center(child: Text(_services[index])),
-      //     );
-      //   },
-      // )
-      // ,
-      child: GridView.count(
-        crossAxisCount: 3,
-        childAspectRatio: 2,
-        crossAxisSpacing: 0,
-        controller: new ScrollController(
-          keepScrollOffset: false,
-        ),
-        shrinkWrap: true,
-        scrollDirection: Axis.vertical,
-        children: _services.map((String value) {
-          return GestureDetector(
-            onTap: () {
-              setState(() {});
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blue),
-              margin: EdgeInsets.all(5.0),
-              child: Center(
-                child: Text(
-                  value,
+      child: Container(
+        child: GridView.builder(
+          itemCount: _services.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 20.0,
+              mainAxisSpacing: 15.0,
+              childAspectRatio: 1.2,
+              mainAxisExtent: 80.0),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  _selectedContainer = index;
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(28.0),
+                  color: _selectedContainer == index
+                      ? Colors.amber[300]
+                      : Colors.white,
+                ),
+                child: Center(
+                  child:
+                      Text(_services[index], style: TextStyle(fontSize: 15.0)),
                 ),
               ),
-            ),
-          );
-        }).toList(),
+            );
+          },
+        ),
       ),
     );
   }
