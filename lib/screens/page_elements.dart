@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:front_page_ui/screens/drugs.dart';
 
-class PageElemnts extends StatefulWidget {
-  const PageElemnts({Key? key}) : super(key: key);
+class PageElements extends StatefulWidget {
+  const PageElements({Key? key}) : super(key: key);
 
   @override
   _PageElemntsState createState() => _PageElemntsState();
 }
 
-class _PageElemntsState extends State<PageElemnts> {
+class _PageElemntsState extends State<PageElements> {
   final List<String> _services = [
     "Medicines",
     "Shots",
@@ -16,6 +16,14 @@ class _PageElemntsState extends State<PageElemnts> {
     "Ambulance",
     "Nurse",
     "LabWork"
+  ];
+  final _iconTypes = <IconData>[
+    Icons.medication_rounded,
+    Icons.medical_services,
+    Icons.person,
+    Icons.car_rental_outlined,
+    Icons.local_hospital,
+    Icons.house,
   ];
   int _selectedContainer = 0;
 
@@ -36,33 +44,37 @@ class _PageElemntsState extends State<PageElemnts> {
               onTap: () {
                 setState(() {
                   _selectedContainer = index;
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => ViewMedicines()),
-                  // );
 
                   if (_services[index] == 'Medicines') {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ViewMedicines()));
+                      context,
+                      MaterialPageRoute(builder: (context) => ViewMedicines()),
+                    );
                   }
-
-                  // _services[index] == 'Medicines' ? Navigator.push(context, MaterialPageRoute(builder: (context) => ViewMedicines())):
                 });
               },
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(28.0),
-                  color: _selectedContainer == index
-                      ? Colors.amber[300]
-                      : Colors.white,
-                ),
-                child: Center(
-                  child:
-                      Text(_services[index], style: TextStyle(fontSize: 15.0)),
-                ),
-              ),
+                  width: 100.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(35.0),
+                      color: Color(0xff107163)),
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          _iconTypes[index],
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
+                        Text(
+                          _services[index],
+                          style: TextStyle(color: Colors.white, fontSize: 20.0),
+                        ),
+                      ],
+                    ),
+                  )),
             );
           },
         ),
