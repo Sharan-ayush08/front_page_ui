@@ -31,6 +31,7 @@ class _PageElemntsState extends State<PageElements> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        margin: EdgeInsets.all(9.0),
         child: GridView.builder(
           itemCount: _services.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
