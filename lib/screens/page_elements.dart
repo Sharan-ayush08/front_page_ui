@@ -15,7 +15,8 @@ class _PageElemntsState extends State<PageElements> {
     "Consulting",
     "Ambulance",
     "Nurse",
-    "LabWork"
+    "LabWork",
+    "More"
   ];
   final _iconTypes = <IconData>[
     Icons.medication_rounded,
@@ -24,8 +25,8 @@ class _PageElemntsState extends State<PageElements> {
     Icons.car_rental_outlined,
     Icons.local_hospital,
     Icons.house,
+    Icons.more
   ];
-  int _selectedContainer = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +45,6 @@ class _PageElemntsState extends State<PageElements> {
             return GestureDetector(
               onTap: () {
                 setState(() {
-                  _selectedContainer = index;
-
                   if (_services[index] == 'Medicines') {
                     Navigator.push(
                       context,
@@ -55,10 +54,12 @@ class _PageElemntsState extends State<PageElements> {
                 });
               },
               child: Container(
-                  width: 100.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35.0),
-                      color: Color(0xff107163)),
+                // width: 100.0,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.green),
+                child: Card(
+                  color: Colors.black,
                   child: Container(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -71,11 +72,13 @@ class _PageElemntsState extends State<PageElements> {
                         ),
                         Text(
                           _services[index],
-                          style: TextStyle(color: Colors.white, fontSize: 20.0),
+                          style: TextStyle(color: Colors.white, fontSize: 15.0),
                         ),
                       ],
                     ),
-                  )),
+                  ),
+                ),
+              ),
             );
           },
         ),
