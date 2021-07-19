@@ -3,6 +3,7 @@ import 'package:front_page_ui/screens/calculator_info.dart';
 import 'package:front_page_ui/screens/condition.dart';
 import 'package:front_page_ui/screens/drugs.dart';
 import 'package:front_page_ui/screens/procedure.dart';
+import 'package:front_page_ui/screens/tools.dart';
 
 class Frontpage extends StatefulWidget {
   const Frontpage({Key? key}) : super(key: key);
@@ -38,6 +39,7 @@ class _FrontpageState extends State<Frontpage> {
     ViewProcedures(),
     ViewConditions(),
     ViewCalculators(),
+    // ViewTools(),
   ];
   final int currentBarItem = 0;
   @override
@@ -107,22 +109,6 @@ class _FrontpageState extends State<Frontpage> {
                 );
               },
             ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.health_and_safety),
-            label: "Health Care",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search_rounded),
-            label: "Diagnostics",
           ),
         ],
       ),

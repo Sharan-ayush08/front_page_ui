@@ -11,7 +11,7 @@ class ViewConditions extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text("Drugs List"),
+        title: Text("Diseases & Conditions"),
       ),
       body: conditionInfo.isEmpty
           ? Center(
