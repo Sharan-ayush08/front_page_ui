@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:front_page_ui/screens/calculator_info.dart';
+import 'package:front_page_ui/screens/condition.dart';
 import 'package:front_page_ui/screens/drugs.dart';
-import 'package:front_page_ui/screens/page_elements.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:front_page_ui/screens/procedure.dart';
 
 class Frontpage extends StatefulWidget {
   const Frontpage({Key? key}) : super(key: key);
@@ -12,15 +13,7 @@ class Frontpage extends StatefulWidget {
 
 class _FrontpageState extends State<Frontpage> {
   final List _listItem = [
-    // Icon(Icons.local_hospital),
-    // Icon(Icons.medical_services),
-    // Icon(Icons.mediation),
-    // Icon(Icons.local_hospital),
-    // Icon(Icons.local_hospital),
-    // Icon(Icons.local_hospital),
-    // Icon(Icons.local_hospital),
-    // Icon(Icons.local_hospital),
-    Icons.local_hospital,
+    Icons.health_and_safety_rounded,
     Icons.local_hospital,
     Icons.local_hospital,
     Icons.local_hospital,
@@ -30,17 +23,23 @@ class _FrontpageState extends State<Frontpage> {
     Icons.more_horiz,
   ];
   final List<String> _text = [
-    "health",
-    "hospital",
-    "medicine",
-    "health",
-    "hospital",
-    "medicine",
-    "health",
+    "Drugs",
+    "Procedures",
+    "Conditions",
+    "Calculators",
+    "Injection",
+    "Health",
+    "Pill Indentifier",
     "More",
   ];
 
-  int currentBarItem = 0;
+  final List<dynamic> page = [
+    ViewMedicines(),
+    ViewProcedures(),
+    ViewConditions(),
+    ViewCalculators(),
+  ];
+  final int currentBarItem = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,33 +77,35 @@ class _FrontpageState extends State<Frontpage> {
           ),
           Container(
             height: 180.0,
-            child: Expanded(
-              flex: 1,
-              child: GridView.builder(
-                itemCount: _listItem.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: 15.0,
-                ),
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: Column(
-                      children: <Widget>[
-                        InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ViewMedicines()));
-                            },
-                            child: Icon(_listItem[index],
-                                size: 40.0, color: Colors.red)),
-                        Text(_text[index])
-                      ],
-                    ),
-                  );
-                },
+            child: GridView.builder(
+              itemCount: _text.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                crossAxisSpacing: 15.0,
               ),
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  child: Column(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => page[index]));
+                          });
+                        },
+                        icon: Icon(
+                          _listItem[index],
+                          color: Colors.red,
+                        ),
+                      ),
+                      Text(_text[index])
+                    ],
+                  ),
+                );
+              },
             ),
           ),
         ],

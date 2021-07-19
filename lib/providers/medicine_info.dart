@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_page_ui/models/information.dart';
+import 'package:front_page_ui/models/drugs.dart';
 
 class Medicines with ChangeNotifier {
   static List<Medicine> desc = [

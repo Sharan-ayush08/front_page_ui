@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_page_ui/models/information.dart';
+import 'package:front_page_ui/models/drugs.dart';
 import 'package:front_page_ui/providers/medicine_info.dart';
 
 class ViewMedicines extends StatelessWidget {
