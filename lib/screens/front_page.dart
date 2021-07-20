@@ -39,7 +39,7 @@ class _FrontpageState extends State<Frontpage> {
     ViewProcedures(),
     ViewConditions(),
     ViewCalculators(),
-    // ViewTools(),
+    ViewTools(),
   ];
   final int currentBarItem = 0;
   @override
