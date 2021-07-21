@@ -7,7 +7,9 @@ class ViewMedicines extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Medicine> medicineInfo = Medicines.desc;
+    // late final desc = Firebasedataase.instance.refrence();
+    // List<Medicine> medicineInfo = Medicines.desc;
+    var medicineInfo;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
@@ -33,6 +35,7 @@ class ViewMedicines extends StatelessWidget {
                           subtitle: Text(
                             'Medicine Desc: ' +
                                 medicineInfo[index].medicineDesc,
+                            // addMedicine(medicine)
                             style: TextStyle(fontSize: 18.0),
                           ),
                         )
