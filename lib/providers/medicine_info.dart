@@ -4,19 +4,23 @@ import 'package:front_page_ui/models/drugs.dart';
 class Medicines with ChangeNotifier {
   static List<Medicine> desc = [
     Medicine(
+      id: '1',
       medicineName: 'Amoxicillin',
       medicineDesc:
           'Amoxicillin is a penicillin antibiotic that fights bacteria',
     ),
     Medicine(
+      id: '2',
       medicineName: 'Paracetamol',
-      medicineDesc: '(acetaminophen) is a pain reliever and a fever reducer.',
+      medicineDesc: 'Paracetamol is a pain reliever and a fever reducer.',
     ),
     Medicine(
+      id: '3',
       medicineName: 'Paracetamol',
-      medicineDesc: '(acetaminophen) is a pain reliever and a fever reducer.',
+      medicineDesc: 'Paracetamol is a pain reliever and a fever reducer.',
     ),
     Medicine(
+        id: '4',
         medicineName: 'Alka-Seltzer.',
         medicineDesc:
             'Alka-Seltzer Anti-Gas is used to relieve painful pressure caused by excess gas in the stomach and intestines.')
@@ -25,8 +29,17 @@ class Medicines with ChangeNotifier {
     return [...desc];
   }
 
-  void addMedicine(value) {
-    desc.add(value);
-    notifyListeners();
-  }
+  // void addMedicine(value) {
+  //   desc.add(value);
+  //   notifyListeners();
+}
+
+Map<String, dynamic> _medicine = {
+  "id": '1',
+  "medicineName": 'Paracetamol',
+  "medicineDesc": 'Paracetamol is a pain reliever and a fever reducer'
+};
+
+void addMedicine(value) {
+  _medicine.addAll(value);
 }
