@@ -15,7 +15,7 @@ class Frontpage extends StatefulWidget {
 
 class _FrontpageState extends State<Frontpage> {
   final List _listItem = [
-    Icons.health_and_safety_rounded,
+    Icons.add_circle,
     Icons.local_hospital,
     Icons.local_hospital,
     Icons.local_hospital,
@@ -41,7 +41,7 @@ class _FrontpageState extends State<Frontpage> {
     ViewConditions(),
     ViewCalculators(),
     ViewTools(),
-    DrugDetails(),
+    // DrugDetails(),
   ];
   final int currentBarItem = 0;
   @override
