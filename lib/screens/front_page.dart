@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front_page_ui/screens/calculator_info.dart';
 import 'package:front_page_ui/screens/condition.dart';
 import 'package:front_page_ui/screens/drugs.dart';
+import 'package:front_page_ui/screens/drugs_detailed.dart';
 import 'package:front_page_ui/screens/procedure.dart';
 import 'package:front_page_ui/screens/tools.dart';
 
@@ -40,6 +41,7 @@ class _FrontpageState extends State<Frontpage> {
     ViewConditions(),
     ViewCalculators(),
     ViewTools(),
+    DrugDetails(),
   ];
   final int currentBarItem = 0;
   @override

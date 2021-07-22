@@ -34,14 +34,39 @@ class Medicines with ChangeNotifier {
   //   notifyListeners();
 }
 
-Map<String, dynamic> medicine = {
-  "id": '1',
-  "medicineName": 'Paracetamol',
-  "medicineDesc": 'Paracetamol is a pain reliever and a fever reducer'
+List<String> _desc = [];
+
+Map<String, Map<String, String>> medicine = {
+  'abatacept': {
+    'Dosage & Indication': 'Injection,Iyophilized powder for reconsitution',
+    'Interaction': 'Cntradicated...',
+    'Adverse Effects': "Headacge(18%),Nasopharyngits(12%)",
+    'Warning': 'None Listed by the manfucaturer',
+    'Pregnancy':
+        'Healthcare professional are encouraged to register patients and pregant women.',
+    'Pharmacology': 'chemeric protein',
+    'Adminstration':
+        'Reconstitute each vial contents with 10ml sterile water for injection uisng Only the silicions-free.',
+    'Image': 'Loading',
+    'Formulary': 'Orenica,Orencia ClickJet'
+  },
+  'abacavir': {
+    'Dosage & Indication':
+        'Indicated for treatment of HIV infection in combination with other antirevorial agents.',
+    'Interaction': 'Cntradicated...',
+    'Adverse Effects': 'Nausea,Heache',
+    'Warning': 'Hyoersentivity reactions',
+    'Pregnancy':
+        'Healthcare professional are encouraged to register patients and pregant women.',
+    'Pharmacology':
+        'Gaunsoine analog that inhibits HIV-1 reverse transcriptes by completing with dGTP.',
+    'Adminstration':
+        'Reconstitute each vial contents with 10ml sterile water for injection uisng Only the silicions-free.',
+    'Image': 'Loading',
+    'Formulary': 'Orenica,Orencia ClickJet'
+
+  },
+  // Trying to implement here but was not able to...
+  
 };
 
-void addMedicine(Map medicine) {
-  medicine.forEach((key, value) {
-    print('medicineName =$key : medicineDesc=$value');
-  });
-}
