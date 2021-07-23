@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_page_ui/models/drugs.dart';
 import 'package:front_page_ui/providers/medicine_info.dart';
 import 'package:front_page_ui/screens/drugs_detailed.dart';
 import 'package:provider/provider.dart';

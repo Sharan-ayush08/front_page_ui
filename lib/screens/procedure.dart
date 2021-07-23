@@ -37,6 +37,7 @@ class _ViewProceduresState extends State<ViewProcedures> {
                               return ViewAnatnomy();
                               // ignore: dead_code
                               break;
+
                             default:
                               return ViewAnatnomy();
                           }

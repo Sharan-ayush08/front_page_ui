@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 
 class AnatomyDetails extends StatelessWidget {
   final anatomy;
-
   const AnatomyDetails({Key? key, this.anatomy}) : super(key: key);
 
   @override
@@ -33,29 +32,20 @@ class AnatomyDetails extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 5),
-              child: Card(
-                child: ListTile(
-                  title: Text(
-                    anatomy,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  // subtitle: Text('Orenica, Orenica Clickjet'),
+              child: Container(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text(
+                        anatomy,
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      // subtitle: Text('Orenica, Orenica Clickjet'),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            Card(
-              child: ListTile(
-                  onTap: () {},
-                  title: Text(
-                    "Health Directory",
-                    style: TextStyle(fontSize: 15.0),
-                  ),
-                  subtitle:
-                      Text("Need to make a referral? Serach by specialty."),
-                  trailing: Icon(
-                    Icons.arrow_forward,
-                    size: 15.0,
-                  )),
             ),
             Card(
               child: ListView.builder(

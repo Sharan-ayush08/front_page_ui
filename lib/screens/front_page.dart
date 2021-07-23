@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:front_page_ui/screens/calculator_info.dart';
 import 'package:front_page_ui/screens/condition.dart';
 import 'package:front_page_ui/screens/drugs.dart';
-import 'package:front_page_ui/screens/drugs_detailed.dart';
 import 'package:front_page_ui/screens/procedure.dart';
 import 'package:front_page_ui/screens/tools.dart';
 
