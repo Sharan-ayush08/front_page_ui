@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:front_page_ui/providers/medicine_info.dart';
+import 'package:front_page_ui/providers/procedure_detailed/anatomy.dart';
+import 'package:front_page_ui/providers/procedure_info.dart';
 import 'package:front_page_ui/screens/front_page.dart';
 import "package:provider/provider.dart";
 
@@ -16,6 +18,12 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => Medicines(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => Procedures(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => Anatomy(),
         )
       ],
       child: MaterialApp(

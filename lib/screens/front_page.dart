@@ -43,7 +43,7 @@ class _FrontpageState extends State<Frontpage> {
     ViewTools(),
     // DrugDetails(),
   ];
-  final int currentBarItem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
