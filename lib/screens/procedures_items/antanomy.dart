@@ -14,6 +14,7 @@ class ViewAnatnomy extends StatelessWidget {
     //   'Arotic Valve Anatomy',
     // ];
     final _anatomy = Provider.of<Anatomy>(context).items;
+    // ignore: non_constant_identifier_names
     final List _anatomy_details = _anatomy.keys.toList();
     return Scaffold(
         appBar: AppBar(

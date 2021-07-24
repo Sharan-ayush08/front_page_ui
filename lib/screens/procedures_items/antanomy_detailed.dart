@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front_page_ui/providers/medicine_info.dart';
 import 'package:front_page_ui/providers/procedure_detailed/anatomy.dart';
 import 'package:provider/provider.dart';
 
