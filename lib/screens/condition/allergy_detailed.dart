@@ -22,10 +22,6 @@ class AllergyDetails extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.share),
-          ),
-          IconButton(
-            onPressed: () {},
             icon: Icon(Icons.more_vert),
           ),
         ],
@@ -45,20 +41,20 @@ class AllergyDetails extends StatelessWidget {
                 ),
               ),
             ),
-            Card(
-              child: ListTile(
-                  onTap: () {},
-                  title: Text(
-                    "Health Directory",
-                    style: TextStyle(fontSize: 15.0),
-                  ),
-                  subtitle:
-                      Text("Need to make a referral? Serach by specialty."),
-                  trailing: Icon(
-                    Icons.arrow_forward,
-                    size: 15.0,
-                  )),
-            ),
+            // Card(
+            //   child: ListTile(
+            //       onTap: () {},
+            //       title: Text(
+            //         "Health Directory",
+            //         style: TextStyle(fontSize: 15.0),
+            //       ),
+            //       subtitle:
+            //           Text("Need to make a referral? Serach by specialty."),
+            //       trailing: Icon(
+            //         Icons.arrow_forward,
+            //         size: 15.0,
+            //       )),
+            // ),
             Card(
               child: ListView.builder(
                 shrinkWrap: true,
