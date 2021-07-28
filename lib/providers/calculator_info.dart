@@ -6,15 +6,15 @@ class Calculators with ChangeNotifier {
     Calculator(calculator: 'General Calculators'),
     Calculator(calculator: 'Addiction Medicine'),
     Calculator(calculator: 'Anesthesiology'),
-    Calculator(calculator: 'Cardiac Surgery'),
-    Calculator(calculator: 'Cardiology'),
-    Calculator(calculator: 'COVID-19'),
-    Calculator(calculator: 'Crtical Care'),
-    Calculator(calculator: 'Emergency'),
-    Calculator(calculator: 'Endocrinology'),
-    Calculator(calculator: 'Gastroenterology'),
-    Calculator(calculator: 'Geriastrics'),
-    Calculator(calculator: 'Hematology')
+    // Calculator(calculator: 'Cardiac Surgery'),
+    // Calculator(calculator: 'Cardiology'),
+    // Calculator(calculator: 'COVID-19'),
+    // Calculator(calculator: 'Crtical Care'),
+    // Calculator(calculator: 'Emergency'),
+    // Calculator(calculator: 'Endocrinology'),
+    // Calculator(calculator: 'Gastroenterology'),
+    // Calculator(calculator: 'Geriastrics'),
+    // Calculator(calculator: 'Hematology')
   ];
 
   List<Calculator> get items {

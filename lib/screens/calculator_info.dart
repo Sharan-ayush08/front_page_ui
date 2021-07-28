@@ -11,11 +11,12 @@ class ViewCalculators extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text("Drugs List"),
+        title: Text("Calculators"),
+        actions: [Icon(Icons.search)],
       ),
       body: calculatorInfo.isEmpty
           ? Center(
-              child: Text("No such Medicines"),
+              child: Text("Searching.."),
             )
           : ListView.builder(
               itemCount: calculatorInfo.length,
