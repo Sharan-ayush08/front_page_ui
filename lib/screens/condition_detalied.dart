@@ -9,7 +9,9 @@ class ConditionDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _conditions = Provider.of<Medicines>(context).items;
-    final List<String> _points = _conditions[condition]!.keys.toList();
+    final List<String> _points = _conditions[condition] == null
+        ? []
+        : _conditions[condition]!.keys.toList();
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
