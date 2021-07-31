@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_page_ui/providers/conditions/allergy_info.dart';
+import 'package:front_page_ui/providers/conditions/condition_data.dart';
 import 'package:front_page_ui/screens/condition_detalied.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +8,7 @@ class ViewConditions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _condition = Provider.of<Allergies>(context).items;
+    final _condition = Provider.of<Conditions>(context).items;
     final List _conditionNames = _condition.keys.toList();
     return Scaffold(
       appBar: AppBar(
@@ -25,8 +25,12 @@ class ViewConditions extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ConditionDetails(
-                            condition: _conditionNames[index])));
+                        builder: (context) => ConditionDetailed(
+                              title: _conditionNames[index],
+                              condition: _condition[_conditionNames[index]],
+
+                              // ['Allergy and Immunology']
+                            )));
                   },
                   child: Column(
                     children: <ListTile>[

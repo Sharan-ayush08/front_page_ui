@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ConditionDetailed extends StatelessWidget {
+class ConditionDetails extends StatelessWidget {
   final String title;
   final Map<String, dynamic>? condition;
 
-  const ConditionDetailed(
+  const ConditionDetails(
       {Key? key, required this.title, required this.condition})
       : super(key: key);
 
@@ -15,7 +15,6 @@ class ConditionDetailed extends StatelessWidget {
         condition!.length, (index) => condition!.keys.toList()[index]);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
         title: Text(title),
       ),
       body: SingleChildScrollView(

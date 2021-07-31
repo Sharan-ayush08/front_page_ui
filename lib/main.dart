@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_page_ui/providers/conditions/allergy_info.dart';
+import 'package:front_page_ui/providers/conditions/condition_data.dart';
 import 'package:front_page_ui/providers/medicine_info.dart';
 import 'package:front_page_ui/providers/procedure_detailed/anatomy.dart';
 import 'package:front_page_ui/providers/procedure_info.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) => Anatomy(),
         ),
         ChangeNotifierProvider(
-          create: (ctx) => Allergies(),
+          create: (ctx) => Conditions(),
         )
       ],
       child: MaterialApp(

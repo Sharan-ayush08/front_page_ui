@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Allergies with ChangeNotifier {
-  Map<String, Map<String, dynamic>> _allergyList = {
+class Conditions with ChangeNotifier {
+  Map<String, dynamic> _conditionList = {
     'Allergy and Immunology': {
       'Allergy Pathogensis': {
         'Aeroallergens': {
@@ -19,7 +19,7 @@ class Allergies with ChangeNotifier {
       }
     }
   };
-  Map<String, Map<String, dynamic>> get items {
-    return _allergyList;
+  Map<String, dynamic> get items {
+    return _conditionList;
   }
 }
