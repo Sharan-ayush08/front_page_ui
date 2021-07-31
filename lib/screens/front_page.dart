@@ -35,7 +35,7 @@ class _FrontpageState extends State<Frontpage> {
   ];
 
   final List<dynamic> page = [
-    ViewMedicines(),
+    // ViewMedicines(),
     ViewProcedures(),
     ViewConditions(),
     ViewCalculators(),
